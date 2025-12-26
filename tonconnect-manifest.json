@@ -3,8 +3,13 @@
   "description": "TON Connect Demo",
   "icons": ["https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/icon.png"],
   "version": "1.0.0",
-  "developer": { "name": "Kyaw San Oo", "website": "https://example.com" },
-  "permissions": ["ton_addr"],
-  "support": { "url": "https://example.com/support" },
+  "developer": {
+    "name": "Kyaw San Oo",
+    "website": "https://example.com"
+  },
+  "permissions": ["ton_connect"],  
+  "support": {
+    "url": "https://example.com/support"
+  },
   "returnUrl": "fundora://callback"
 }
