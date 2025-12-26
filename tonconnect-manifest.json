@@ -7,7 +7,7 @@
     "name": "Kyaw San Oo",
     "website": "https://example.com"
   },
-  "permissions": ["ton_connect"],  
+  "permissions": ["ton_connect"],
   "support": {
     "url": "https://example.com/support"
   },
