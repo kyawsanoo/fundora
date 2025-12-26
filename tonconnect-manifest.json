@@ -1,17 +1,7 @@
 {
+  "url": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/index.html",
   "name": "Fundora",
-  "description": "TON Connect Demo",
-  "version": "1.0.0",
-  "icons": ["https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/icon.png"],
-  "permissions": ["ton_connect"],
-  "developer": {
-    "name": "Kyaw San Oo",
-    "website": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/index.html"
-  },
-  "support": {
-    "url": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/support.html"
-  },
+  "iconUrl": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/icon.png",
   "termsOfUseUrl": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/terms.html",
-  "privacyPolicyUrl": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/privacy.html",
-  "returnUrl": "fundora://callback"
+  "privacyPolicyUrl": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/privacy.html"
 }
