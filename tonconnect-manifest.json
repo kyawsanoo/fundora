@@ -1,7 +1,20 @@
 {
-  "url": "https://fundora.app", 
   "name": "Fundora",
-  "iconUrl": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/icon.png",
-  "termsOfUseUrl": "https://example.com/terms",
-  "privacyPolicyUrl": "https://example.com/privacy"
+  "description": "TON Connect Demo",
+  "version": "1.0.0",
+  "developer": {
+    "name": "Kyaw San Oo",
+    "website": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/index.html"
+  },
+  "icons": [
+    "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/icon.png"
+  ],
+  "permissions": ["ton_addr"],
+  "support": {
+    "url": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/support.html"
+  },
+  "returnUrl": "fundora://callback",
+  "url": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/index.html",
+  "termsOfUseUrl": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/terms.html",
+  "privacyPolicyUrl": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/privacy.html"
 }
