@@ -1,20 +1,12 @@
 {
   "name": "Fundora",
-  "description": "TON Connect Demo for Android Native",
   "version": "1.0.0",
-  "developer": {
-    "name": "Kyaw San Oo",
-    "website": "https://fundora.test"
-  },
-  "icons": [
-    "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/icon.png"
-  ],
+  "developer": { "name": "Kyaw San Oo", "website": "https://kyawsanoo.github.io/tonconnect-manifest" },
+  "icons": ["https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/icon.png"],
   "permissions": ["ton_addr"],
-  "support": {
-    "url": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/support.html"
-  },
+  "support": { "url": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/support.html" },
   "returnUrl": "fundora://callback",
-  "url": "https://fundora.test",
+  "url": "https://kyawsanoo.github.io/tonconnect-manifest",
   "termsOfUseUrl": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/terms.html",
   "privacyPolicyUrl": "https://raw.githubusercontent.com/kyawsanoo/tonconnect-manifest/main/privacy.html"
 }
