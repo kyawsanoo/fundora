@@ -12,7 +12,8 @@
 
     // Redirect to Android via intent
     if (wallet && proof && payload) {
-        window.location.href = `intent://callback?ton_addr=${wallet}&ton_proof=${proof}&payload=${payload}#Intent;scheme=fundora;package=app.finance.fundora;end`;
+            window.location.href = "fundora://callback?ton_addr=" + params.get("ton_addr") + "&payload=" + params.get("payload");
+
     }
 </script>
 </head>
