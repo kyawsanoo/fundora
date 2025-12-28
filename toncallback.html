@@ -1,0 +1,35 @@
+<script src="https://cdn.jsdelivr.net/npm/@tonconnect/ui@2.0.12/dist/tonconnect-ui.min.js"></script>
+<script>
+const tonUI = new TON_CONNECT_UI.TonConnectUI({
+    manifestUrl: "https://kyawsanoo.github.io/fundora/tonconnect-manifest.json",
+    actionsConfiguration: {
+        returnUrl: "https://kyawsanoo.github.io/fundora/toncallback.html"
+    }
+});
+
+// Listen for wallet connection
+tonUI.onStatusChange(wallet => {
+    if (!wallet) return;
+
+    const address = wallet.account.address;
+    const proof = wallet.connectItems?.tonProof?.proof || "";
+
+    console.log("Wallet connected:", address, proof);
+
+    // If in WebView, notify Android
+    if (window.Android && window.Android.onWalletConnected) {
+        window.Android.onWalletConnected(address, proof);
+        if (window.Android.closeTonConnectDialog) {
+            window.Android.closeTonConnectDialog();
+        }
+    }
+
+    // For browser: store and redirect
+    else {
+        localStorage.setItem("walletAddress", address);
+        localStorage.setItem("walletProof", proof);
+        // Optionally redirect to main page
+        window.location.href = "/index.html";
+    }
+});
+</script>
