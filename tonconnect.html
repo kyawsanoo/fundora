@@ -1,37 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Fundora TON Connect</title>
 <script src="https://cdn.jsdelivr.net/npm/@tonconnect/ui@2.0.12/dist/tonconnect-ui.min.js"></script>
+<style>
+body {
+    font-family: system-ui, sans-serif;
+    background: #0f1115;
+    color: white;
+    padding: 16px;
+}
+h2 {
+    margin-bottom: 16px;
+}
+#tonconnect {
+    width: 100%;
+    max-width: 400px;
+    height: 400px; /* Must have visible height */
+    margin-top: 16px;
+}
+#status {
+    margin-top: 16px;
+    opacity: 0.8;
+}
+</style>
 </head>
 <body>
+
 <h2>Connect TON Wallet</h2>
+<div id="status">Waiting for nonce…</div>
 <div id="tonconnect"></div>
 
 <script>
-const params = new URLSearchParams(window.location.search)
-const nonce = params.get("nonce")
-if (!nonce) throw "Missing nonce"
-
-const tonUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: "https://zyczqnpuwpxidaktpfzm.supabase.co/storage/v1/object/public/tonconnect/tonconnect-manifest.json?v=2",
-    actionsConfiguration: {
-        returnUrl: "fundora://callback"
+window.addEventListener('DOMContentLoaded', () => {
+    const status = document.getElementById("status");
+    function log(msg) {
+        status.innerText = msg;
+        console.log(msg);
     }
-})
 
-// Render UI
-tonUI.render("tonconnect")
+    // Get nonce from URL query
+    const params = new URLSearchParams(window.location.search);
+    const nonce = params.get("nonce");
+    if (!nonce) {
+        log("Missing nonce in URL");
+        throw "Missing nonce";
+    }
 
-// Start wallet connection
-tonUI.connectWallet({ tonProof: { payload: nonce } })
+    log("Initializing TonConnect…");
 
-// Listen for status changes
-tonUI.onStatusChange(wallet => {
-    if (!wallet) return
-    console.log("Wallet connected:", wallet.account.address)
-})
+    // Initialize TonConnect UI
+    const tonUI = new TON_CONNECT_UI.TonConnectUI({
+        manifestUrl: "https://zyczqnpuwpxidaktpfzm.supabase.co/storage/v1/object/public/tonconnect/tonconnect-manifest.json?v=2",
+        actionsConfiguration: {
+            returnUrl: "fundora://callback"
+        }
+    });
+
+    // Render TonConnect UI in div
+    tonUI.render("tonconnect");
+
+    // Start wallet connection
+    tonUI.connectWallet({
+        tonProof: { payload: nonce },
+        forceSelectWallet: true // ensure chooser shows even if cached session exists
+    });
+
+    // Listen for wallet connection
+    tonUI.onStatusChange(wallet => {
+        if (!wallet) return;
+        log("Wallet connected: " + wallet.account.address);
+
+        // Optionally, store proof or notify your Android app
+        const proof = wallet.connectItems?.tonProof?.proof || "";
+        console.log("TonProof:", proof);
+
+        if (window.Android && window.Android.onWalletConnected) {
+            window.Android.onWalletConnected(wallet.account.address, proof);
+        }
+    });
+
+    log("TonConnect UI initialized, waiting for wallet...");
+});
 </script>
 </body>
 </html>
