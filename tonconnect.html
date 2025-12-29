@@ -46,25 +46,35 @@ if (!nonce) {
 
 log("Initializing TonConnect…");
 
+// Clear any previous session (force reset)
+window.localStorage.clear();
+window.sessionStorage.clear();
+
+// Create TonConnect instance
 const tonUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: "https://zyczqnpuwpxidaktpfzm.supabase.co/storage/v1/object/public/tonconnect/tonconnect-manifest.json",
+    manifestUrl: "https://zyczqnpuwpxidaktpfzm.supabase.co/storage/v1/object/public/tonconnect/tonconnect-manifest.json?v=2",
     actionsConfiguration: {
-        // This MUST be Android deep link
-        returnUrl: "fundora://callback"
+        returnUrl: "fundora://callback" // Android deep link
     }
 });
 
-// Start login
+// Disconnect previous wallet if exists
+if (tonUI.wallet) {
+    tonUI.disconnect();
+    log("Previous wallet session disconnected");
+}
+
+// Start new login with nonce
 tonUI.connectWallet({
     tonProof: {
         payload: nonce
     }
 });
 
-// Optional UI
+// Render TonConnect UI
 tonUI.render("tc");
 
-// Just for visual status
+// Status updates
 tonUI.onStatusChange(wallet => {
     if (!wallet) return;
     log("Wallet connected, waiting for Tonkeeper…");
