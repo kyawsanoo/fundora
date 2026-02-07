@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundora Support</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,32 +13,51 @@
             color: #333;
         }
 
+        /* ---------- HEADER ---------- */
         header {
             background-color: #2c3e50;
             color: white;
-            padding: 25px 0;
             text-align: center;
+            padding: 40px 20px 0;
         }
 
+        .banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 30px;
+        }
+
+        /* ---------- NAV ---------- */
         nav {
             background-color: #34495e;
             display: flex;
+            align-items: center;
             justify-content: center;
+            gap: 20px;
+            padding: 12px;
+            flex-wrap: wrap;
+        }
+
+        .nav-logo {
+            height: 40px;
         }
 
         nav a {
             color: white;
-            padding: 15px 25px;
+            padding: 10px 18px;
             text-decoration: none;
             font-weight: bold;
         }
 
         nav a:hover {
             background-color: #1abc9c;
+            border-radius: 6px;
         }
 
+        /* ---------- MAIN ---------- */
         main {
-            padding: 20px;
+            padding: 30px 20px;
             max-width: 900px;
             margin: auto;
         }
@@ -50,11 +70,12 @@
             margin-bottom: 15px;
         }
 
+        /* ---------- FOOTER ---------- */
         footer {
             background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 20px 0;
+            padding: 25px 10px;
         }
 
         footer a {
@@ -68,48 +89,76 @@
         }
     </style>
 </head>
+
 <body>
 
+<!-- ===== HEADER ===== -->
 <header>
     <h1>Fundora Support</h1>
     <p>We’re here to help you with any questions or issues.</p>
+
+    <!-- FULL WIDTH BANNER -->
+    <img src="../images/banner.png" alt="Fundora Support Banner" class="banner-image">
 </header>
 
+<!-- ===== NAV ===== -->
 <nav>
+    <img src="../images/logo.png" alt="Fundora Logo" class="nav-logo">
+
     <a href="../index.html">Home</a>
     <a href="../privacy/">Privacy</a>
     <a href="index.html">Support</a>
 </nav>
 
+<!-- ===== MAIN ===== -->
 <main>
+
     <section>
         <h2>Contact Us</h2>
         <p>If you have any questions, feedback, or need assistance, you can reach us at:</p>
         <ul>
-            <li>Email: <a href="mailto:support@fundora.com">support@fundora.com</a></li>
+            <li>Email:
+                <a href="mailto:support@fundora.com">support@fundora.com</a>
+            </li>
         </ul>
     </section>
 
     <section>
         <h2>Frequently Asked Questions (FAQs)</h2>
         <ul>
-            <li><strong>How do I earn CREDITS?</strong>  
-                You can earn CREDITS by using the app, completing in-app games, or participating in special events.</li>
-            <li><strong>Can I trade with Credits?</strong>  
-                Yes! You can use CREDITS to trade in both spot and futures markets inside Fundora.</li>
-            <li><strong>How do I view real-time crypto prices?</strong>  
-                Go to the “Prices” section in the app to see live updates for all supported cryptocurrencies.</li>
-            <li><strong>Is my account secure?</strong>  
-                Fundora uses industry-standard encryption to protect your data and account information.</li>
+            <li>
+                <strong>How do I earn CREDITS?</strong><br>
+                You can earn CREDITS by using the app, completing in-app games,
+                or participating in special events.
+            </li>
+            <li>
+                <strong>Can I trade with Credits?</strong><br>
+                Yes! You can use CREDITS to trade in both spot and futures
+                markets inside Fundora.
+            </li>
+            <li>
+                <strong>How do I view real-time crypto prices?</strong><br>
+                Go to the “Prices” section in the app to see live updates.
+            </li>
+            <li>
+                <strong>Is my account secure?</strong><br>
+                Fundora uses industry-standard encryption to protect your data.
+            </li>
         </ul>
     </section>
 
     <section>
         <h2>Need more help?</h2>
-        <p>If your question isn’t answered here, please contact us at <a href="mailto:support@fundora.com">support@fundora.com</a> and we will assist you as soon as possible.</p>
+        <p>
+            If your question isn’t answered here, please contact us at
+            <a href="mailto:support@fundora.com">support@fundora.com</a>
+            and we’ll assist you as soon as possible.
+        </p>
     </section>
+
 </main>
 
+<!-- ===== FOOTER ===== -->
 <footer>
     <p>
         <a href="../index.html">Home</a> |
