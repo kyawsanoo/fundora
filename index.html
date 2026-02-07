@@ -17,15 +17,15 @@
         header {
             background-color: #2c3e50;
             color: white;
-            padding: 30px 20px;
             text-align: center;
+            padding: 40px 20px 0;
         }
 
-        .header-image {
-            max-width: 100%;
+        .banner-image {
+            width: 100%;
             height: auto;
-            margin-top: 25px;
-            border-radius: 12px;
+            display: block;
+            margin-top: 30px;
         }
 
         /* ---------- NAV ---------- */
@@ -35,7 +35,7 @@
             align-items: center;
             justify-content: center;
             gap: 20px;
-            padding: 10px;
+            padding: 12px;
             flex-wrap: wrap;
         }
 
@@ -57,13 +57,13 @@
 
         /* ---------- MAIN ---------- */
         main {
-            padding: 20px;
-            max-width: 900px;
+            padding: 30px 20px;
+            max-width: 1000px;
             margin: auto;
         }
 
         section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         h1, h2 {
@@ -75,13 +75,27 @@
             font-weight: bold;
         }
 
-        .section-image {
+        /* ---------- SCREENSHOTS ---------- */
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .screenshot-card {
+            text-align: center;
+        }
+
+        .screenshot-card img {
             width: 100%;
-            max-width: 650px;
-            display: block;
-            margin: 20px auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .screenshot-card p {
+            margin-top: 12px;
+            font-size: 14px;
         }
 
         ul {
@@ -93,7 +107,7 @@
             background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 20px 10px;
+            padding: 25px 10px;
         }
 
         footer a {
@@ -118,14 +132,13 @@
         in-app CREDITS points, trading, and in-app games
     </p>
 
-    <!-- Hero / Banner Image -->
-    <img src="images/banner.png" alt="Fundora App Banner" class="header-image">
+    <!-- FULL WIDTH BANNER -->
+    <img src="images/banner.png" alt="Fundora App Banner" class="banner-image">
 </header>
 
 <!-- ===== NAV ===== -->
 <nav>
     <img src="images/logo.png" alt="Fundora Logo" class="nav-logo">
-
     <a href="index.html">Home</a>
     <a href="privacy/">Privacy</a>
     <a href="support/">Support</a>
@@ -136,27 +149,55 @@
 
     <section>
         <h2>What is Fundora?</h2>
-
-        <!-- App Preview Image -->
-        <img src="images/app-preview.png" alt="Fundora App Preview" class="section-image">
-
         <p>
             Fundora is a
-            <span class="highlight">powerful play-to-earn, trade-to-earn app</span>
-            that lets you track real-time cryptocurrency prices,
-            earn and spend Credits points, and trade in both spot and
-            futures markets using Credits.
+            <span class="highlight">play-to-earn and trade-to-earn crypto app</span>
+            designed to help users track real-time market prices, earn in-app
+            Credits, trade crypto assets, and enjoy rewarding mini games —
+            all inside one secure platform.
         </p>
+    </section>
+
+    <section>
+        <h2>App Screenshots</h2>
+        <p>
+            Explore the Fundora experience through real in-app screenshots
+            showcasing trading, markets, rewards, and games.
+        </p>
+
+        <div class="screenshots">
+
+            <div class="screenshot-card">
+                <img src="images/preview-home.png" alt="Fundora Home Screen">
+                <p><strong>Home Dashboard</strong><br>Quick access to prices, rewards, and daily activities.</p>
+            </div>
+
+            <div class="screenshot-card">
+                <img src="images/preview-market.png" alt="Crypto Market Prices">
+                <p><strong>Live Market Prices</strong><br>Track real-time crypto price movements instantly.</p>
+            </div>
+
+            <div class="screenshot-card">
+                <img src="images/preview-trade.png" alt="Spot and Futures Trading">
+                <p><strong>Spot & Futures Trading</strong><br>Trade using Credits with a simple, secure interface.</p>
+            </div>
+
+            <div class="screenshot-card">
+                <img src="images/preview-games.png" alt="In-App Games">
+                <p><strong>Play & Earn Games</strong><br>Earn extra Credits by playing fun in-app games.</p>
+            </div>
+
+        </div>
     </section>
 
     <section>
         <h2>Key Features</h2>
         <ul>
-            <li><span class="highlight">Real-Time Crypto Prices:</span> Live market updates.</li>
-            <li><span class="highlight">Credits Points:</span> Earn and use in-app Credits.</li>
-            <li><span class="highlight">Spot & Futures Trading:</span> Trade securely with Credits.</li>
-            <li><span class="highlight">In-App Games:</span> Play games to earn rewards.</li>
-            <li>Secure login and account protection.</li>
+            <li><span class="highlight">Real-Time Crypto Prices</span></li>
+            <li><span class="highlight">Credits-Based Trading System</span></li>
+            <li><span class="highlight">Spot & Futures Markets</span></li>
+            <li><span class="highlight">Play-to-Earn Mini Games</span></li>
+            <li>Secure authentication & account protection</li>
         </ul>
     </section>
 
@@ -166,9 +207,9 @@
             Download Fundora from
             <a href="https://play.google.com/store/apps/details?id=app.finance.fundora"
                target="_blank" rel="noopener noreferrer">
-               Google Play
+                Google Play
             </a>
-            and start earning today!
+            and start earning today.
         </p>
     </section>
 
