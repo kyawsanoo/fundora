@@ -19,13 +19,16 @@
             color: white;
             text-align: center;
             padding: 40px 20px 0;
+            overflow: hidden;
         }
 
+        /* TRUE FULL-WIDTH BANNER */
         .banner-image {
-            width: 100%;
+            width: 100vw;
             height: auto;
             display: block;
             margin-top: 30px;
+            margin-left: calc(-50vw + 50%);
         }
 
         /* ---------- NAV ---------- */
@@ -97,13 +100,16 @@
     <h1>Fundora Support</h1>
     <p>We’re here to help you with any questions or issues.</p>
 
-    <!-- FULL WIDTH BANNER -->
+    <!-- FULL-WIDTH BANNER -->
     <img src="../images/banner.png" alt="Fundora Support Banner" class="banner-image">
 </header>
 
 <!-- ===== NAV ===== -->
 <nav>
-    <img src="../images/logo.png" alt="Fundora Logo" class="nav-logo">
+    <!-- CLICKABLE LOGO -->
+    <a href="../index.html">
+        <img src="../images/logo.png" alt="Fundora Logo" class="nav-logo">
+    </a>
 
     <a href="../index.html">Home</a>
     <a href="../privacy/">Privacy</a>
