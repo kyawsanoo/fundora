@@ -8,8 +8,6 @@ bidmachine.io,466,DIRECT
 
 google.com, pub-2078945561429906, DIRECT, f08c47fec0942fa0
 
-facebook.com,Business_ID,RESELLER,c3e20eee3f780d68
-
 152media.info, 152M312, RESELLER
 
 152media.info, 152M499, RESELLER
