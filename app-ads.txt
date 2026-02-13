@@ -1,7 +1,5 @@
 appodeal.com, 261241, DIRECT
 
-#BidMachine
-
 bidmachine.io,1,DIRECT
 
 bidmachine.io,466,DIRECT
